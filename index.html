@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#f8f9fc">
 <meta name="robots" content="index, follow">
 
-<!-- ✅ تگ‌های اضافه شده برای PWA -->
+<!-- ✅ تگ‌های PWA -->
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icon-192x192.png">
 
@@ -136,7 +136,7 @@ button { font-family: inherit; }
 .app-card:hover::before { opacity: 1; }
 .app-card:active { transform: scale(0.98); transition-duration: 0.1s; }
 
-/* ═══ آیکون‌های جدید (کاشی‌های گرادیانی با آیکون خطی) ═══ */
+/* ═══ آیکون‌های جدید ═══ */
 .app-icon {
   flex-shrink: 0;
   width: 60px; height: 60px;
@@ -150,12 +150,10 @@ button { font-family: inherit; }
   overflow: hidden;
 }
 
-/* گرادیانت‌های پاستلی مشابه تصویر */
 .app-icon.discipline { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); }
 .app-icon.talent { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%); }
 .app-icon.classroom { background: linear-gradient(135deg, #b7f8db 0%, #50a7c2 100%); }
 
-/* افکت نور سیال روی آیکون */
 .app-icon::after {
   content: ""; position: absolute; inset: 0;
   background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.8) 0%, transparent 50%);
@@ -163,7 +161,6 @@ button { font-family: inherit; }
   pointer-events: none;
 }
 
-/* SVG Icons */
 .app-icon svg {
   width: 28px; height: 28px;
   stroke: #ffffff;
@@ -185,7 +182,6 @@ button { font-family: inherit; }
   overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
 }
 
-/* فلش ظریف */
 .app-arrow {
   flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%;
   background: rgba(255,255,255,0.5);
@@ -198,8 +194,8 @@ button { font-family: inherit; }
 }
 .app-arrow svg { width: 16px; height: 16px; stroke-width: 2.5; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 
-/* ═══ Actions (دکمه‌های قرصی‌شکل) ═══ */
-.actions { display: flex; flex-direction: column; gap: 14px; margin-bottom: 40px; }
+/* ═══ Actions ═══ */
+.actions { display: flex; flex-direction: column; gap: 14px; margin-bottom: 30px; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
   gap: 10px; padding: 18px 24px; border-radius: 999px;
@@ -230,15 +226,30 @@ button { font-family: inherit; }
   background: #ffffff; transform: translateY(-2px); box-shadow: var(--sh-hover);
 }
 
-/* ═══ Footer ═══ */
+/* ═══ Footer & Intro ═══ */
+.foot-wrapper {
+  margin-top: 10px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
 .foot {
   display: flex; align-items: center; justify-content: center;
   gap: 12px; font-size: 12.5px; color: var(--text-light);
-  flex-wrap: wrap; padding-top: 10px;
+  flex-wrap: wrap; margin-bottom: 16px;
 }
 .foot a { color: var(--text-sub); font-weight: 600; transition: color 0.2s; }
 .foot a:hover { color: var(--text-main); }
 .foot .dot { opacity: 0.4; }
+
+.intro-text {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-sub);
+  font-weight: 500;
+  opacity: 0.85;
+  line-height: 1.8;
+}
 
 /* ═══ Toast ═══ */
 .toast {
@@ -277,7 +288,8 @@ button { font-family: inherit; }
 
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="/" class="brand">
+    <!-- ✅ لینک لوگو به بلاگفا اصلاح شد -->
+    <a href="https://sadeqbahjat.blogfa.com/" class="brand">
       <span class="brand-icon">
         <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
       </span>
@@ -361,10 +373,16 @@ button { font-family: inherit; }
     </a>
   </section>
 
-  <div class="foot">
-    <a href="/">بازگشت به صفحه اصلی</a>
-    <span class="dot">·</span>
-    <a href="/posts/">مطالب آموزشی</a>
+  <!-- ✅ فوتر و معرفی اصلاح شد -->
+  <div class="foot-wrapper">
+    <div class="foot">
+      <a href="https://sadeqbahjat.blogfa.com/">بازگشت به صفحه اصلی</a>
+      <span class="dot">·</span>
+      <a href="https://sadeqbahjat.blogfa.com/posts/">مطالب آموزشی</a>
+    </div>
+    <p class="intro-text">
+      طراحی و توسعه: صادق بهجت | معاون مدرسه و طراح سامانه‌های هوشمندسازی تابان
+    </p>
   </div>
 
 </main>
@@ -434,7 +452,7 @@ button { font-family: inherit; }
 })();
 </script>
 
-<!-- ✅ اسکریپت اضافه شده برای فعال‌سازی Service Worker -->
+<!-- ✅ اسکریپت Service Worker -->
 <script>
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js');
