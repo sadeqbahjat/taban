@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>سامانه تابان - نسخه اپلیکیشن</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8b5cf6">
+    <style>
+        * { box-sizing: border-box; font-family: 'Vazirmatn', Tahoma, sans-serif; margin: 0; padding: 0; }
+        body {
+            background: linear-gradient(160deg, #eef0f5 0%, #f7f8fb 100%);
+            min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 20px;
+        }
+        .header { text-align: center; margin-top: 30px; margin-bottom: 30px; }
+        .header h1 { font-size: 24px; color: #1a1d29; font-weight: 800; margin-bottom: 8px; }
+        .header p { font-size: 14px; color: #6b7280; }
+        .app-grid { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 400px; }
+        .app-card {
+            background: #fff; border-radius: 20px; padding: 20px; display: flex; align-items: center;
+            text-decoration: none; color: #1a1d29; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent;
+        }
+        .app-card:active { transform: scale(0.98); }
+        .icon {
+            width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center;
+            justify-content: center; font-size: 24px; color: #fff; margin-left: 15px; flex-shrink: 0;
+        }
+        .icon-disc { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
+        .icon-talent { background: linear-gradient(135deg, #14b8a6, #0ea5e9); }
+        .icon-class { background: linear-gradient(135deg, #10b981, #059669); }
+        .card-text h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .card-text p { font-size: 12px; color: #6b7280; }
+        .card-arrow { margin-right: auto; color: #9ca3af; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>سامانه تابان</h1>
+        <p>به نسخه اپلیکیشن خوش آمدید</p>
+    </div>
+
+    <div class="app-grid">
+        <a href="https://script.google.com/macros/s/AKfycbwr6lqHlEqQ3uJWIDyubta3Fi8sRXQEOcQrHnjO7S9eT4zNPh-NbUz3Yg-pHFUJhXkD/exec" class="app-card">
+            <div class="icon icon-disc">📘</div>
+            <div class="card-text">
+                <h3>دفتر انضباطی</h3>
+                <p>ثبت غیبت و کارنامه انضباطی</p>
+            </div>
+            <div class="card-arrow">←</div>
+        </a>
+
+        <a href="https://script.google.com/macros/s/AKfycbxyDpeMTETc2pRx5kjdJ016Xk8ONeuHg4m4B1OCff0TKWNw5jPFQYD0A4TBPwNO1fPK/exec" class="app-card">
+            <div class="icon icon-talent">🎯</div>
+            <div class="card-text">
+                <h3>سامانه پرورشی</h3>
+                <p>استعدادیابی و انتخابات</p>
+            </div>
+            <div class="card-arrow">←</div>
+        </a>
+
+        <a href="https://script.google.com/macros/s/AKfycbx2z8B8C74NZcP-dGwQYtejBJitCu1zf9gOD5vt5oaxzAgYkURuMqnju4-zZ1rmrbQ_/exec" class="app-card">
+            <div class="icon icon-class">📗</div>
+            <div class="card-text">
+                <h3>دفتر کلاسی</h3>
+                <p>ثبت نمرات و حضور و غیاب</p>
+            </div>
+            <div class="card-arrow">←</div>
+        </a>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

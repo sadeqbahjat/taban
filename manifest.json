@@ -1,0 +1,23 @@
+{
+  "name": "سامانه تابان",
+  "short_name": "تابان",
+  "description": "دسترسی سریع به سامانه‌های هوشمندسازی مدارس",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f8f9fc",
+  "theme_color": "#8b5cf6",
+  "dir": "rtl",
+  "lang": "fa",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
